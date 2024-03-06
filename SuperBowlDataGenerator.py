@@ -33,7 +33,7 @@ class SuperBowlDataGenerator:
         data = {'Date': [], 'Team1': [], 'Team2': [], 'City': [], 'Score1': [], 'Score2': []}
 
         for _ in range(self.num_games):
-            date = datetime(2020, 1, 1) + timedelta(days=np.random.randint(0, 365*5))
+            date = datetime(2000, 1, 1) + timedelta(days=np.random.randint(0, 365*10))
             team1, team2 = np.random.choice(teams, size=2, replace=False)
             city = np.random.choice(cities)
             score1, score2 = np.random.randint(0, 50, size=2)
@@ -53,5 +53,5 @@ class SuperBowlDataGenerator:
         print(f"Generated {self.num_games} Super Bowl games data and saved to {self.output_file}.")
 
 # Example usage:
-generator = SuperBowlDataGenerator(num_games=1000000, num_cities=100, num_teams=100)
+generator = SuperBowlDataGenerator(num_games=100, num_cities=10, num_teams=10)
 generator.generate_and_save_data()
